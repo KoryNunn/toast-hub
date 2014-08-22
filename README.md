@@ -21,7 +21,7 @@ Pull requests welcome.
 
 ## Warning
 
-This is probably some of the worst code I've ever written. This extensions WILL break.
+This is probably some of the worst code I've ever written. This extension WILL break.
 
 ## Future
 
