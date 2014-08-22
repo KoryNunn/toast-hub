@@ -15,6 +15,10 @@ But if you don't mind a really shitty extension floating around in your chrome:
 - Find the folder you cloned, and load it
 - Done
 
+## But I have firefox!
+
+Pull requests welcome.
+
 ## Warning
 
 This is probably some of the worst code I've ever written. This extensions WILL break.
