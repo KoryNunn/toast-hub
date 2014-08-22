@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "toast hub",
+  "description": "Github toasts",
+  "version": "1.0",
+
+  "permissions": [
+    "https://api.github.com/",
+    "https://github.com/",
+    "notifications"
+  ],
+  "background": {
+    "persistent": true,
+    "scripts": ["index.built.js"]
+  }
+}
