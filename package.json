@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "crel": "^1.1.2",
     "simple-ajax": "0.0.1"
   }
 }
