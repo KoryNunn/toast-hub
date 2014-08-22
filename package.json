@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "crel": "^1.1.2",
+    "doc-js": "^1.0.0",
     "simple-ajax": "0.0.1"
   }
 }

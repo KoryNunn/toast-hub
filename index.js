@@ -2,6 +2,7 @@ var Ajax = require('simple-ajax'),
     githubApi = 'https://api.github.com';
     githubUrl = 'https://github.com',
     crel = require('crel'),
+    doc = require('doc-js'),
     seen = [];
 
 function parseHtml(html){
@@ -15,14 +16,15 @@ function parseHtml(html){
         newSeen = [];
 
     for (var i = 0; i < notifications.length; i++) {
-        var notification = notifications[i],
-            link = notification.querySelector('.js-notification-target'),
+        var notification = doc(notifications[i]),
+            link = notification.findOne('.js-notification-target'),
             result = {};
 
-        result.text = link.textContent;
+        result.parentName = doc(notification.closest('.boxed-group')).findOne('h3').textContent.trim();
+        result.text = link.textContent.trim();
         result.link = link.getAttribute('href');
-        result.id = notification.getAttribute('data-note-id');
-        result.image = notification.querySelector('img.avatar').getAttribute('src');
+        result.id = notification[0].getAttribute('data-note-id');
+        result.image = notification.findOne('img.avatar').getAttribute('src');
 
         newSeen.push(result.id);
 
@@ -41,7 +43,7 @@ function parseHtml(html){
 function showDesktopNotification(results){
     results.forEach(function(result){
         var notification = new Notification('Toasthub', {
-            body: result.text,
+            body: result.parentName + ': ' + result.text,
             icon: result.image
         });
 
